@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:js_goods/app.dart';
 import 'package:js_goods/utils/theme/theme.dart';
 
 void main() {
