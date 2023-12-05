@@ -3,35 +3,36 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class THelperFuntions {
-  static Color? getColor (String value) {
-    if (value == 'Green'){
+  static Color? getColor(String value) {
+  switch (value) {
+    case 'Green':
       return Colors.green;
-    } else if (value == 'Red'){
+    case 'Red':
       return Colors.red;
-    } else if (value == 'Blue'){
+    case 'Blue':
       return Colors.blue;
-    } else if (value == 'Yellow'){
+    case 'Yellow':
       return Colors.yellow;
-    } else if (value == 'Orange'){
+    case 'Orange':
       return Colors.orange;
-    } else if (value == 'Purple'){
+    case 'Purple':
       return Colors.purple;
-    } else if (value == 'Pink'){
+    case 'Pink':
       return Colors.pink;
-    } else if (value == 'Brown'){
+    case 'Brown':
       return Colors.brown;
-    } else if (value == 'Grey'){
+    case 'Grey':
       return Colors.grey;
-    } else if (value == 'Black'){
+    case 'Black':
       return Colors.black;
-    } else if (value == 'White'){
+    case 'White':
       return Colors.white;
-    } else if (value == 'Primary'){
+    case 'Primary':
       return const Color(0xFF6200EE);
-    } else {
+    default:
       return null;
-    }
   }
+}
 
   static void showSnackBar(String message) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
