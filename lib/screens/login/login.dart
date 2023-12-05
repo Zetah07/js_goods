@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import 'package:js_goods/common/styles/spacing_styles.dart';
 import 'package:js_goods/common/widgets/login_signup/social_buttons.dart';
-import 'package:js_goods/common/widgets/form_divider.dart';
+import 'package:js_goods/common/widgets/login_signup/form_divider.dart';
 import 'package:js_goods/utils/constants/sizes.dart';
 import 'package:js_goods/utils/constants/text_strings.dart';
 

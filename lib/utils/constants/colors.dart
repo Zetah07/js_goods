@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TColors {
   TColors._();
 
-  static const Color primary = Color(0xFF6200EE);
+  static const Color primary = Color(0xFF4a67FF);
   static const Color secondary = Color(0xFFFFE24B);
   static const Color accent = Color(0xFFB0C7FF);
 
