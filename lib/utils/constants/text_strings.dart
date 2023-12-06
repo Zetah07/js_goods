@@ -34,6 +34,7 @@ class TTexts {
   static const String resendEmailIn = "Resend Email in";
   static const String rememberMe = "Remember Me";
   static const String login = "Login";
+  static const String and = "&";
 
   //Authentication Heading Text
   static const String loginTitle = "Welcome Back";
