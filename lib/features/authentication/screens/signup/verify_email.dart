@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:js_goods/common/widgets/success_screen/success_screen.dart';
 import 'package:js_goods/features/authentication/screens/login/login.dart';
 import 'package:js_goods/utils/constants/images_strings.dart';
 import 'package:js_goods/utils/constants/sizes.dart';
@@ -30,7 +31,7 @@ class VerifyEmailScreen extends StatelessWidget {
               children: [
                 //Image
                 Image(
-                  image: const AssetImage(TImages.productsIllustration),
+                  image: const AssetImage(TImages.deliveredEmailIllustration),
                   width: THelperFuntions.screenWidth() * 0.6,
                 ),
                 const SizedBox(height: TSizes.spaceBtwSections),
@@ -38,11 +39,28 @@ class VerifyEmailScreen extends StatelessWidget {
                 //Title & Subtitle
                 Text( TTexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
                 const SizedBox(height: TSizes.spaceBtwItems),
-                Text('support@jsgoods.com', style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
+                Text('support@jsgoods.com', style: Theme.of(context).textTheme.bodyMedium, textAlign: TextAlign.center),
                 const SizedBox(height: TSizes.spaceBtwSections),
-                Text( TTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.bodyMedium, textAlign: TextAlign.center),
+                Text( TTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center),
+                const SizedBox(height: TSizes.spaceBtwSections),
 
                 //Buttons
+                SizedBox(
+                  width: double.infinity, child: ElevatedButton(
+                    onPressed: () =>Get.to(()=>  SuccessScreen(
+                      image: TImages.staticSuccesIllustration, 
+                      title: TTexts.yourAccountCreatedTitle, 
+                      subTitle: TTexts.yourAccountCreatedSubTitle, 
+                      onPressed: () => Get.to(()=> const LoginScreen()),
+                      ),
+                    ), 
+                    child: const Text(TTexts.tContinue),
+                  ),
+                ),
+                const SizedBox(height: TSizes.spaceBtwItems),
+                SizedBox(
+                  width: double.infinity, child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.resendEmail))
+                ),
               ],
             )),
       ),

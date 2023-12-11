@@ -35,6 +35,7 @@ class TTexts {
   static const String rememberMe = "Remember Me";
   static const String login = "Login";
   static const String and = "&";
+  static const String tContinue = "Continue";
 
   //Authentication Heading Text
   static const String loginTitle = "Welcome Back";
