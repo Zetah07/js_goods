@@ -36,6 +36,8 @@ class TTexts {
   static const String login = "Login";
   static const String and = "&";
   static const String tContinue = "Continue";
+  static const String submit = "Submit";
+  static const String done = "Done";
 
   //Authentication Heading Text
   static const String loginTitle = "Welcome Back";
@@ -54,6 +56,5 @@ class TTexts {
   //Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarsubtitle = "Transcend Store";
-
 
 }

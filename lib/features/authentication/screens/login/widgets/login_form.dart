@@ -5,6 +5,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:js_goods/utils/constants/sizes.dart';
 import 'package:js_goods/utils/constants/text_strings.dart';
 
+import '../../password_configuration/forget_password.dart';
 import '../../signup/signup.dart';
 
 class LoginForm extends StatelessWidget {
@@ -59,7 +60,7 @@ class LoginForm extends StatelessWidget {
         
                 // Forget Password
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const ForgetPassword()),
                     child: const Text(TTexts.forgetPassword)),
               ],
             ),
