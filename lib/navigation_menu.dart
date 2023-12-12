@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'package:js_goods/utils/helpers/helper_functions.dart';
-import 'package:js_goods/features/authentication/screens/home/home_screen.dart';
+import 'package:js_goods/features/shop/screen/home/home.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
