@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/primary_header_container.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Home Screen'),
+    return Scaffold(
+      appBar: AppBar(),
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          PrimaryHeaderContainer(
+            child: Container(),
+          ),
+        ],
       ),
-    );
+    ));
   }
 }
+
