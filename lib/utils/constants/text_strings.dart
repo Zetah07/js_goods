@@ -55,6 +55,6 @@ class TTexts {
 
   //Home
   static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarsubtitle = "Transcend Store";
+  static const String homeAppbarSubtitle = "Transcend Store";
 
 }
