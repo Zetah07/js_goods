@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/texts/section_heading.dart';
-import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/images_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../../../../common/widgets/appbar/primary_header_container.dart';
 
 import 'widgets/home_appbar.dart';
+import 'widgets/home_categories.dart';
 import 'widgets/search_container.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body: SingleChildScrollView(
       child: Column(
         children: [
@@ -38,49 +37,14 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       //Heading
-                      TSectionHeading(title: TTexts.popularCategories),
+                      TSectionHeading(
+                        title: TTexts.popularCategories,
+                        textColor: Colors.white,
+                      ),
                       SizedBox(height: TSizes.spaceBtwSections),
 
                       //Categories
-                      SizedBox(
-                        height: 80,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: 6,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (_, index) {
-                            return Column(
-                              children: [
-                                Container(
-                                  height: 56,
-                                  width: 56,
-                                  padding: const EdgeInsets.all(TSizes.sm),
-                                  decoration: BoxDecoration(
-                                    color: TColors.light,
-                                    borderRadius: BorderRadius.circular(100),
-                                  ),
-                                  child: const Center(
-                                    child: Image(
-                                      image: AssetImage(TImages.sportIcon),
-                                      fit: BoxFit.cover,
-                                      color: TColors.dark,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                    height: TSizes.spaceBtwItems / 2),
-                                Text(
-                                  TTexts.shoes,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelMedium!
-                                      .apply(color: TColors.white),
-                                )
-                              ],
-                            );
-                          },
-                        ),
-                      ),
+                      THomeCategories(),
                     ],
                   ),
                 ),
