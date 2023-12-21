@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:js_goods/utils/constants/images_strings.dart';
 
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -14,12 +15,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: SingleChildScrollView(
       child: Column(
         children: [
           //Header
-          PrimaryHeaderContainer(
+          const PrimaryHeaderContainer(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -49,6 +50,18 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+          ),
+
+          //Body
+          Padding(
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(TSizes.md),
+              ),
+              child: const ClipRRect(child: Image(image: AssetImage(TImages.promoBanner1))),
+              
             ),
           ),
         ],

@@ -16,10 +16,10 @@ class THomeCategories extends StatelessWidget {
       height: 80,
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: 6,
+        itemCount: 12,
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) {
-          return  const TVerticalImageText(image: TImages.shoeIcon, title: TTexts.popularCategories,);
+          return  const TVerticalImageText(image: TImages.sportIcon, title: TTexts.popularCategories,);
         },
       ),
     );

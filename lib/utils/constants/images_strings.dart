@@ -23,14 +23,24 @@ class TImages{
   static const String verifyIllustration = 'assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif';
 
   // Categories Icons
-  static const String sportIcon= 'assets/images/categories/icons8-bowling-64.png';
-  static const String clothIcon= 'assets/images/categories/icons8-tailors-dummy-64.png';
-  static const String shoeIcon= 'assets/images/categories/icons8-shoe-64.png';
-  static const String cosmeticsIcon= 'assets/images/categories/icons8-cosmetics-64.png';
-  static const String animalIcon= 'assets/images/categories/icons8-dog-heart-64.png';
-  static const String toyIcon= 'assets/images/categories/icons8-wooden-toy-car-50.png';
-  static const String furnitureIcon= 'assets/images/categories/icons8-dining-chair-64.png';
-  static const String jewelryIcon= 'assets/images/categories/icons8-sparkling-diamond-64.png';
-  static const String electronicIcon= 'assets/images/categories/icons8-smartphone-64.png';
+  static const String sportIcon= 'assets/icons/categories/icons8-bowling-64.png';
+  static const String clothIcon= 'assets/icons/categories/icons8-tailors-dummy-64.png';
+  static const String shoeIcon= 'assets/icons/categories/icons8-shoes-64.png';
+  static const String cosmeticsIcon= 'assets/icons/categories/icons8-cosmetics-64.png';
+  static const String animalIcon= 'assets/icons/categories/icons8-dog-heart-64.png';
+  static const String toyIcon= 'assets/icons/categories/icons8-wooden-toy-car-50.png';
+  static const String furnitureIcon= 'assets/icons/categories/icons8-dining-chair-64.png';
+  static const String jewelryIcon= 'assets/icons/categories/icons8-sparkling-diamond-64.png';
+  static const String electronicIcon= 'assets/icons/categories/icons8-smartphone-64.png';
+
+  //Banners
+  static const String promoBanner1 = 'assets/images/products/promo-banner-1.png';
+  static const String promoBanner2 = 'assets/images/products/promo-banner-2.png';
+  static const String promoBanner3 = 'assets/images/products/promo-banner-3.png';
+  static const String promoBanner4 = 'assets/images/products/promo-banner-4.png';
+  static const String promoBanner5 = 'assets/images/products/promo-banner-5.png';
+  static const String promoBanner6 = 'assets/images/products/promo-banner-6.png';
+  static const String promoBanner7 = 'assets/images/products/promo-banner-7.png';
+  static const String promoBanner8 = 'assets/images/products/promo-banner-8.png';
   
 }
