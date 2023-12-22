@@ -1,6 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:js_goods/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:js_goods/utils/constants/images_strings.dart';
 
+import '../../../../common/widgets/images/t_rounded_image.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
@@ -8,6 +11,7 @@ import '../../../../common/widgets/appbar/primary_header_container.dart';
 
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
+import 'widgets/promo_slider.dart';
 import 'widgets/search_container.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,12 +19,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body: SingleChildScrollView(
       child: Column(
         children: [
           //Header
-          const PrimaryHeaderContainer(
+          PrimaryHeaderContainer(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -55,14 +59,8 @@ class HomeScreen extends StatelessWidget {
 
           //Body
           Padding(
-            padding: const EdgeInsets.all(TSizes.defaultSpace),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(TSizes.md),
-              ),
-              child: const ClipRRect(child: Image(image: AssetImage(TImages.promoBanner1))),
-              
-            ),
+            padding: EdgeInsets.all(TSizes.defaultSpace),
+            child: TPromoSlider(banners: [TImages.promoBanner1,TImages.promoBanner2, TImages.promoBanner3 ],),
           ),
         ],
       ),
