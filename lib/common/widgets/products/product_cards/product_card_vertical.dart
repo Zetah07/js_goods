@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:js_goods/common/widgets/images/t_rounded_image.dart';
-
 
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/images_strings.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadows.dart';
+import '../../icons/t_circular_icon.dart';
 import '../../images/t_rounded_container.dart';
+import '../../texts/product_title_text.dart';
 
 class TProductCardVertical extends StatelessWidget {
   const TProductCardVertical({super.key});
@@ -31,18 +34,64 @@ class TProductCardVertical extends StatelessWidget {
             height: 180,
             padding: const EdgeInsets.all(TSizes.sm),
             backgroundColor: dark ? TColors.dark : TColors.light,
-            child: const Stack(
+            child: Stack(
               children: [
                 // Thumbnail Image
-                TRoundedImage(
-                  imageUrl: TImages.productImage38
+                const TRoundedImage(
+                  imageUrl: TImages.productImage38,
+                  applyImageRadius: true,
                 ),
+
+                //Sale Tag
+                TRoundedContainer(
+                  radius: TSizes.sm,
+                  backgroundColor: TColors.secondary.withOpacity(0.8),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: TSizes.sm, vertical: TSizes.xs),
+                  child: Text(TTexts.offerTag,
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelLarge!
+                          .apply(color: TColors.black)),
+                ),
+                //Favorite Button
+                const Positioned(
+                    top: 0,
+                    right: 0,
+                    child: TCircularIcon(
+                      icon: Iconsax.heart5,
+                      color: Colors.red,
+                    )),
               ],
             ),
           ),
 
-          // Details
-
+          //Details
+          Padding(
+            padding: const EdgeInsets.only(left: TSizes.sm),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const TProductTitleText(
+                  title: TTexts.productName38,
+                  smallSize: true,
+                ),
+                const SizedBox(height: TSizes.spaceBtwItems / 2),
+                Row(
+                  children: [
+                    Text(
+                      TTexts.nike,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelMedium
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );

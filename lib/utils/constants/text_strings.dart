@@ -42,6 +42,10 @@ class TTexts {
   static const String popularCategories = "Popular Categories";
   static const String viewAll = "View All";
   static const String shoes = "Shoes";
+  static const String offerTag = "25% OFF";
+  static const String addToCart = "Add to Cart";
+  static const String buyNow = "Buy Now";
+  static const String nike = "Nike";
 
   //Authentication Heading Text
   static const String loginTitle = "Welcome Back";
@@ -60,6 +64,14 @@ class TTexts {
   //Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubtitle = "Transcend Store";
+
+  // Products Texts
+  static const String productName1 = "Laptop Acer Aspire 5 A514-54-59QF";
+  static const String productName2 = "Laptop Acer Aspire 5 A514-54-59QF";
+  static const String productName3 = "Laptop Acer Aspire 5 A514-54-59QF";
+  static const String productName4 = "Laptop Acer Aspire 5 A514-54-59QF";
+  static const String productName38 = "Green Nike Air Shoes";
+
 
 
 
