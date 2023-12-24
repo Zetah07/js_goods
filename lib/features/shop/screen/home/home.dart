@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:js_goods/utils/constants/images_strings.dart';
 
+import '../../../../common/widgets/layout/grid_layout.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
@@ -65,18 +66,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: TSizes.spaceBtwSections),
 
                 //Popular Products
-                GridView.builder(
-                  itemCount: 4,
-                  shrinkWrap: true,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: TSizes.gridViewSpacing,
-                    crossAxisSpacing: TSizes.gridViewSpacing,
-                    mainAxisExtent: 288,
-                  ), 
-                  itemBuilder: (_, index) => const TProductCardVertical(),
-
-                ),
+                TGirdLayout(itemCount: 12, itemBuilder: (context, index) => const TProductCardVertical()),
               ],
             ),
           ),
@@ -85,3 +75,4 @@ class HomeScreen extends StatelessWidget {
     ));
   }
 }
+
