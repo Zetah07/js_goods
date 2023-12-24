@@ -5,6 +5,7 @@ import 'package:js_goods/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:js_goods/common/widgets/texts/section_heading.dart';
 import 'package:js_goods/common/widgets/texts/t_brand_title_with_verified_icon.dart';
 import 'package:js_goods/features/shop/screen/home/widgets/search_container.dart';
+import 'package:js_goods/utils/constants/enums.dart';
 import 'package:js_goods/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/images/t_circular_image.dart';
@@ -79,11 +80,21 @@ class StoreScreen extends StatelessWidget {
                               const SizedBox(width: TSizes.spaceBtwItems / 2),
 
                               // Text
-                              const Expanded(
+                              Expanded(
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    TBrandTitleWithVerifiedIcon(
-                                        title: 'Clothes'),
+                                    const TBrandTitleWithVerifiedIcon(
+                                      title: 'Nike',
+                                      brandTextSize: TextSize.large,
+                                    ),
+                                    Text(
+                                      '256 products',
+                                      overflow: TextOverflow.ellipsis,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelMedium,
+                                    )
                                   ],
                                 ),
                               ),
