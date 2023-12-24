@@ -10,6 +10,7 @@ import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadows.dart';
 import '../../icons/t_circular_icon.dart';
 import '../../images/t_rounded_container.dart';
+import '../../texts/product_price_text.dart';
 import '../../texts/product_title_text.dart';
 
 class TProductCardVertical extends StatelessWidget {
@@ -94,10 +95,10 @@ class TProductCardVertical extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       //Price
-                      Text("\$ 120",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context).textTheme.headlineMedium),
+                      const TProductPriceText(
+                        price: '35.5',
+                        isLarge: true,
+                      ),
       
                       Container(
                           decoration: const BoxDecoration(
