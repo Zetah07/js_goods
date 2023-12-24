@@ -5,7 +5,7 @@ import '../../../../common/widgets/layout/grid_layout.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
-import '../../../../common/widgets/appbar/primary_header_container.dart';
+import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
