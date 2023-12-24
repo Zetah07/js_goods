@@ -17,12 +17,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: SingleChildScrollView(
       child: Column(
         children: [
           //Header
-          PrimaryHeaderContainer(
+          const PrimaryHeaderContainer(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -57,15 +57,26 @@ class HomeScreen extends StatelessWidget {
 
           //Body
           Padding(
-            padding: EdgeInsets.all(TSizes.defaultSpace),
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
                 //Promo Slider
-                TPromoSlider(banners: [TImages.promoBanner1,TImages.promoBanner2, TImages.promoBanner3 ],),
-                SizedBox(height: TSizes.spaceBtwSections),
+                const TPromoSlider(banners: [TImages.promoBanner1,TImages.promoBanner2, TImages.promoBanner3 ],),
+                const SizedBox(height: TSizes.spaceBtwSections),
 
                 //Popular Products
-                TProductCardVertical(),
+                GridView.builder(
+                  itemCount: 4,
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: TSizes.gridViewSpacing,
+                    crossAxisSpacing: TSizes.gridViewSpacing,
+                    mainAxisExtent: 288,
+                  ), 
+                  itemBuilder: (_, index) => const TProductCardVertical(),
+
+                ),
               ],
             ),
           ),
