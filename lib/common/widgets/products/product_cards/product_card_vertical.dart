@@ -44,7 +44,7 @@ class TProductCardVertical extends StatelessWidget {
                     imageUrl: TImages.productImage38,
                     applyImageRadius: true,
                   ),
-      
+
                   //Sale Tag
                   TRoundedContainer(
                     radius: TSizes.sm,
@@ -59,16 +59,17 @@ class TProductCardVertical extends StatelessWidget {
                   ),
                   //Favorite Button
                   const Positioned(
-                      top: 0,
-                      right: 0,
-                      child: TCircularIcon(
-                        icon: Iconsax.heart5,
-                        color: Colors.red,
-                      )),
+                    top: 0,
+                    right: 0,
+                    child: TCircularIcon(
+                      icon: Iconsax.heart5,
+                      color: Colors.red,
+                    ),
+                  ),
                 ],
               ),
             ),
-      
+
             //Details
             Padding(
               padding: const EdgeInsets.only(left: TSizes.sm),
@@ -99,7 +100,7 @@ class TProductCardVertical extends StatelessWidget {
                         price: '35.5',
                         isLarge: true,
                       ),
-      
+
                       Container(
                           decoration: const BoxDecoration(
                             color: TColors.dark,
@@ -113,8 +114,8 @@ class TProductCardVertical extends StatelessWidget {
                               height: TSizes.iconLg * 1.2,
                               width: TSizes.iconLg * 1.2,
                               child: Center(
-                                  child:
-                                      Icon(Iconsax.add, color: TColors.white)))),
+                                  child: Icon(Iconsax.add,
+                                      color: TColors.white)))),
                     ],
                   ),
                 ],

@@ -46,6 +46,7 @@ class TTexts {
   static const String addToCart = "Add to Cart";
   static const String buyNow = "Buy Now";
   static const String nike = "Nike";
+  static const String adidas = "Adidas";
 
   //Authentication Heading Text
   static const String loginTitle = "Welcome Back";

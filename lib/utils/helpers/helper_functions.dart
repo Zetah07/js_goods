@@ -28,7 +28,7 @@ class THelperFuntions {
     case 'White':
       return Colors.white;
     case 'Primary':
-      return const Color(0xFF6200EE);
+      return const Color(0xFF4b68FF);
     default:
       return null;
   }
