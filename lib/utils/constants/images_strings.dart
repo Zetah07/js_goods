@@ -90,8 +90,9 @@ class TImages{
   static const String productImage40 = 'assets/images/products/NikeAirJordonSingleBlue.png';
   static const String productImage41 = 'assets/images/products/NikeAirJordonSingleOrange.png';
   static const String productImage42 = 'assets/images/products/NikeAirJordonWhiteMagenta.png';
-  static const String productImage43 = 'assets/images/products/NikeAirJordonWhiteRed.png';
+  static const String productImage43 = 'assets/images/products/NikeAirJOrdonWhiteRed.png';
   static const String productImage44 = 'assets/images/products/NikeAirMax.png';
+  static const String productImage45 = 'assets/images/products/product-jacket.png';
 
   
 }

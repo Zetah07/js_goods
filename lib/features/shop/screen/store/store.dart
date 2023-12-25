@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:js_goods/common/widgets/appbar/appbar.dart';
+import 'package:js_goods/common/widgets/appbar/tabbar.dart';
 import 'package:js_goods/common/widgets/images/t_rounded_container.dart';
 import 'package:js_goods/common/widgets/layout/grid_layout.dart';
 import 'package:js_goods/common/widgets/products/cart/cart_menu_icon.dart';
@@ -9,6 +11,7 @@ import 'package:js_goods/features/shop/screen/home/widgets/search_container.dart
 import 'package:js_goods/utils/constants/enums.dart';
 import 'package:js_goods/utils/helpers/helper_functions.dart';
 
+import '../../../../common/widgets/card/brand_card.dart';
 import '../../../../common/widgets/images/t_circular_image.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/images_strings.dart';
@@ -60,7 +63,7 @@ class StoreScreen extends StatelessWidget {
                             padding: EdgeInsets.zero,
                           ),
                           const SizedBox(height: TSizes.spaceBtwItems),
-      
+
                           //  Featured Brands
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,83 +87,110 @@ class StoreScreen extends StatelessWidget {
                               )
                             ],
                           ),
-      
+
                           const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-      
+
                           TGirdLayout(
                               itemCount: 4,
                               mainAxisExtent: 80,
                               itemBuilder: (_, index) {
-                                return GestureDetector(
-                                  onTap: () {},
-                                  child: TRoundedContainer(
-                                    padding: const EdgeInsets.all(TSizes.sm),
-                                    showBorder: true,
-                                    backgroundColor: Colors.transparent,
-                                    child: Row(
-                                      children: [
-                                        // Icon
-                                        Flexible(
-                                          child: TCircularImage(
-                                            isNetwokImage: false,
-                                            image: TImages.clothIcon,
-                                            backgroundColor: Colors.transparent,
-                                            overlayColor: dark
-                                                ? TColors.white
-                                                : TColors.black,
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                            width: TSizes.spaceBtwItems / 2),
-      
-                                        // Text
-                                        Expanded(
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              const TBrandTitleWithVerifiedIcon(
-                                                title: 'Nike',
-                                                brandTextSize: TextSize.large,
-                                              ),
-                                              Text(
-                                                '256 products',
-                                                overflow: TextOverflow.ellipsis,
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelMedium,
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                return const TBrandCard(
+                                  showBorder: false,
                                 );
                               }),
                         ],
                       ),
                     ),
-      
+
                     // Tabs
-                    bottom: TabBar(
-                      isScrollable: true,
-                      indicatorColor: TColors.primary,
-                      unselectedLabelColor: TColors.darkGrey,
-                      labelColor: dark ? TColors.white : TColors.primary,
-                      tabs: const [
-                        Tab(child: Text('Sports')),
-                        Tab(child: Text('Furniture')),
-                        Tab(child: Text('Electronics')),
-                        Tab(child: Text('Clothes')),
-                        Tab(child: Text('Cosmetics')),
+                    bottom: const TTabBar(tabs: [
+                      Tab(text: 'Sports'),
+                      Tab(text: 'Furniture'),
+                      Tab(text: 'Electronics'),
+                      Tab(text: 'Clothes'),
+                      Tab(text: 'Cosmetics'),
                     ]),
                   ),
                 ];
               },
-              body: Container(
-                color: Colors.green,
+              body: TabBarView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        TRoundedContainer(
+                          showBorder: true,
+                          borderColor: TColors.darkGrey,
+                          backgroundColor: Colors.transparent,
+                          margin: const EdgeInsets.only(
+                              bottom: TSizes.spaceBtwItems),
+                          child: Column(
+                            children: [
+                              // Brand with Products Count
+                              const TBrandCard(showBorder: true),
+
+                              //Brand Top 3 Products Images
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: TRoundedContainer(
+                                      height: 100,
+                                      backgroundColor: dark
+                                          ? TColors.darkerGrey
+                                          : TColors.light,
+                                      margin: const EdgeInsets.only(
+                                          right: TSizes.sm),
+                                      padding: const EdgeInsets.all(TSizes.md),
+                                      child: const Image(
+                                          fit: BoxFit.contain,
+                                          image: AssetImage(
+                                              TImages.productImage45)),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: TRoundedContainer(
+                                      height: 100,
+                                      backgroundColor: dark
+                                          ? TColors.darkerGrey
+                                          : TColors.light,
+                                      margin: const EdgeInsets.only(
+                                          right: TSizes.sm),
+                                      padding: const EdgeInsets.all(TSizes.md),
+                                      child: const Image(
+                                          fit: BoxFit.contain,
+                                          image: AssetImage(
+                                              TImages.productImage44)),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: TRoundedContainer(
+                                      height: 100,
+                                      backgroundColor: dark
+                                          ? TColors.darkerGrey
+                                          : TColors.light,
+                                      margin: const EdgeInsets.only(
+                                          right: TSizes.sm),
+                                      padding: const EdgeInsets.all(TSizes.md),
+                                      child: const Image(
+                                          fit: BoxFit.contain,
+                                          image: AssetImage(
+                                              TImages.productImage43)),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Center(child: Text('Furniture')),
+                  const Center(child: Text('Electronics')),
+                  const Center(child: Text('Clothes')),
+                  const Center(child: Text('Cosmetics')),
+                ],
               ))),
     );
   }
