@@ -33,6 +33,9 @@ class TImages{
   static const String jewelryIcon= 'assets/icons/categories/icons8-sparkling-diamond-64.png';
   static const String electronicIcon= 'assets/icons/categories/icons8-smartphone-64.png';
 
+  // User
+  static const String user = 'assets/images/reviews/review_profile_image_3.jpeg';
+
   //Banners
   static const String promoBanner1 = 'assets/images/products/promo-banner-1.png';
   static const String promoBanner2 = 'assets/images/products/promo-banner-2.png';

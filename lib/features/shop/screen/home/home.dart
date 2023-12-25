@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         children: [
           //Header
-          const PrimaryHeaderContainer(
+          const TTPrimaryHeaderContainer(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -52,6 +52,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: TSizes.spaceBtwSections),
               ],
             ),
           ),

@@ -5,8 +5,8 @@ import 'circular_container.dart';
 import '../curved_edges/curved_edges_widget.dart';
 
 
-class PrimaryHeaderContainer extends StatelessWidget {
-  const PrimaryHeaderContainer({
+class TTPrimaryHeaderContainer extends StatelessWidget {
+  const TTPrimaryHeaderContainer({
     super.key, required this.child,
   });
   final Widget child;
@@ -14,11 +14,8 @@ class PrimaryHeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TCurvedEdgeWidget(
-      child: Container(
-        color: TColors.primary,
-        padding: const EdgeInsets.all(0),
-        child: SizedBox(
-          height: 400,
+        child: Container(
+          color: TColors.primary,
           child: Stack(
             children: [
               Positioned(
@@ -40,7 +37,6 @@ class PrimaryHeaderContainer extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }
