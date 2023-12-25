@@ -113,85 +113,71 @@ class StoreScreen extends StatelessWidget {
                   ),
                 ];
               },
-              body: TabBarView(
+              body: const TabBarView(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(TSizes.defaultSpace),
+                    padding: EdgeInsets.all(TSizes.defaultSpace),
                     child: Column(
                       children: [
-                        TRoundedContainer(
-                          showBorder: true,
-                          borderColor: TColors.darkGrey,
-                          backgroundColor: Colors.transparent,
-                          margin: const EdgeInsets.only(
-                              bottom: TSizes.spaceBtwItems),
-                          child: Column(
-                            children: [
-                              // Brand with Products Count
-                              const TBrandCard(showBorder: true),
-
-                              //Brand Top 3 Products Images
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: TRoundedContainer(
-                                      height: 100,
-                                      backgroundColor: dark
-                                          ? TColors.darkerGrey
-                                          : TColors.light,
-                                      margin: const EdgeInsets.only(
-                                          right: TSizes.sm),
-                                      padding: const EdgeInsets.all(TSizes.md),
-                                      child: const Image(
-                                          fit: BoxFit.contain,
-                                          image: AssetImage(
-                                              TImages.productImage45)),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: TRoundedContainer(
-                                      height: 100,
-                                      backgroundColor: dark
-                                          ? TColors.darkerGrey
-                                          : TColors.light,
-                                      margin: const EdgeInsets.only(
-                                          right: TSizes.sm),
-                                      padding: const EdgeInsets.all(TSizes.md),
-                                      child: const Image(
-                                          fit: BoxFit.contain,
-                                          image: AssetImage(
-                                              TImages.productImage44)),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: TRoundedContainer(
-                                      height: 100,
-                                      backgroundColor: dark
-                                          ? TColors.darkerGrey
-                                          : TColors.light,
-                                      margin: const EdgeInsets.only(
-                                          right: TSizes.sm),
-                                      padding: const EdgeInsets.all(TSizes.md),
-                                      child: const Image(
-                                          fit: BoxFit.contain,
-                                          image: AssetImage(
-                                              TImages.productImage43)),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                        TBrandShowcase(images: [
+                          TImages.productImage43,
+                          TImages.productImage44,
+                          TImages.productImage45,
+                        ]),
+                        ],),
                     ),
-                  ),
-                  const Center(child: Text('Furniture')),
-                  const Center(child: Text('Electronics')),
-                  const Center(child: Text('Clothes')),
-                  const Center(child: Text('Cosmetics')),
+                  Center(child: Text('Furniture')),
+                  Center(child: Text('Electronics')),
+                  Center(child: Text('Clothes')),
+                  Center(child: Text('Cosmetics')),
                 ],
               ))),
+    );
+  }
+}
+
+class TBrandShowcase extends StatelessWidget {
+  const TBrandShowcase({
+    super.key,
+    required this.images,
+  });
+
+  final List<String> images;
+
+  @override
+  Widget build(BuildContext context) {
+    return TRoundedContainer(
+      showBorder: true,
+      borderColor: TColors.darkGrey,
+      backgroundColor: Colors.transparent,
+      padding: const EdgeInsets.all(TSizes.md),
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      child: Column(
+        children: [
+          // Brand with Products Count
+          const TBrandCard(showBorder: true),
+
+          //Brand Top 3 Products Images
+        Row(
+          children: images.map((image) => brandTopProductImageWidget(image, context)).toList()),
+        ],
+      ),
+    );
+  }
+
+    Widget brandTopProductImageWidget(String image, context) {
+    final dark = THelperFuntions.isDarkMode(context);
+    return Expanded(
+      child: TRoundedContainer(
+        height: 100,
+        padding: const EdgeInsets.all(TSizes.md),
+        margin: const EdgeInsets.only(right: TSizes.sm),
+        backgroundColor: dark ? TColors.darkerGrey : TColors.light,
+        child: Image(
+          fit: BoxFit.contain,
+          image: AssetImage(image),
+        ),
+      ),
     );
   }
 }
