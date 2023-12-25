@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
+
 import 'package:js_goods/common/widgets/appbar/appbar.dart';
 import 'package:js_goods/common/widgets/appbar/tabbar.dart';
-import 'package:js_goods/common/widgets/images/t_rounded_container.dart';
 import 'package:js_goods/common/widgets/layout/grid_layout.dart';
 import 'package:js_goods/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:js_goods/common/widgets/texts/section_heading.dart';
-import 'package:js_goods/common/widgets/texts/t_brand_title_with_verified_icon.dart';
 import 'package:js_goods/features/shop/screen/home/widgets/search_container.dart';
-import 'package:js_goods/utils/constants/enums.dart';
+import 'package:js_goods/features/shop/screen/store/widgets/category_tab.dart';
 import 'package:js_goods/utils/helpers/helper_functions.dart';
 
-import '../../../../common/widgets/card/brand_card.dart';
-import '../../../../common/widgets/images/t_circular_image.dart';
+import '../../../../common/widgets/brands/brand_card.dart';
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/images_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -115,69 +111,13 @@ class StoreScreen extends StatelessWidget {
               },
               body: const TabBarView(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(TSizes.defaultSpace),
-                    child: Column(
-                      children: [
-                        TBrandShowcase(images: [
-                          TImages.productImage43,
-                          TImages.productImage44,
-                          TImages.productImage45,
-                        ]),
-                        ],),
-                    ),
-                  Center(child: Text('Furniture')),
-                  Center(child: Text('Electronics')),
-                  Center(child: Text('Clothes')),
-                  Center(child: Text('Cosmetics')),
+                  CategoryTab(),
+                  CategoryTab(),
+                  CategoryTab(),
+                  CategoryTab(),
+                  CategoryTab(),
                 ],
               ))),
-    );
-  }
-}
-
-class TBrandShowcase extends StatelessWidget {
-  const TBrandShowcase({
-    super.key,
-    required this.images,
-  });
-
-  final List<String> images;
-
-  @override
-  Widget build(BuildContext context) {
-    return TRoundedContainer(
-      showBorder: true,
-      borderColor: TColors.darkGrey,
-      backgroundColor: Colors.transparent,
-      padding: const EdgeInsets.all(TSizes.md),
-      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
-      child: Column(
-        children: [
-          // Brand with Products Count
-          const TBrandCard(showBorder: true),
-
-          //Brand Top 3 Products Images
-        Row(
-          children: images.map((image) => brandTopProductImageWidget(image, context)).toList()),
-        ],
-      ),
-    );
-  }
-
-    Widget brandTopProductImageWidget(String image, context) {
-    final dark = THelperFuntions.isDarkMode(context);
-    return Expanded(
-      child: TRoundedContainer(
-        height: 100,
-        padding: const EdgeInsets.all(TSizes.md),
-        margin: const EdgeInsets.only(right: TSizes.sm),
-        backgroundColor: dark ? TColors.darkerGrey : TColors.light,
-        child: Image(
-          fit: BoxFit.contain,
-          image: AssetImage(image),
-        ),
-      ),
     );
   }
 }
