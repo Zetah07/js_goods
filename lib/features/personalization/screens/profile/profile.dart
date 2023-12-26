@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
@@ -69,11 +70,7 @@ class ProfileScreen extends StatelessWidget {
               TProfileMenu(
                 onPressed: () {
                   Clipboard.setData(const ClipboardData(text: '79214'));
-                  const snackBar = SnackBar(
-                    content: Text('Copied to Clipboard'),
-                    duration: Duration(seconds: 1),
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  Get.snackbar('User ID', 'Copied to Clipboard');
                 },
                 icon: Iconsax.copy,
                 title: 'User ID',

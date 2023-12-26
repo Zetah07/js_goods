@@ -20,7 +20,7 @@ class FavoriteScreen extends StatelessWidget {
       appBar: TAppBar(
         title: Text('Wishlist', style: Theme.of(context).textTheme.headlineMedium),
         actions: [
-          TCircularIcon(icon: Iconsax.add, onPressed: ()=> Get.to (const HomeScreen())),
+          TCircularIcon(icon: Iconsax.add, onPressed: ()=> Get.to(() => const HomeScreen())),
         ],
       ),
       body: SingleChildScrollView(
