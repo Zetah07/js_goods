@@ -34,7 +34,7 @@ class TImages{
   static const String electronicIcon= 'assets/icons/categories/icons8-smartphone-64.png';
 
   // User
-  static const String user = 'assets/images/reviews/review_profile_image_3.jpeg';
+  static const String user = 'assets/images/reviews/user.jpg';
 
   //Banners
   static const String promoBanner1 = 'assets/images/products/promo-banner-1.png';

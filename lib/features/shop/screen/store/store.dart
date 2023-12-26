@@ -10,7 +10,6 @@ import 'package:js_goods/features/shop/screen/store/widgets/category_tab.dart';
 import 'package:js_goods/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/brands/brand_card.dart';
-import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -62,25 +61,9 @@ class StoreScreen extends StatelessWidget {
 
                           //  Featured Brands
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TSectionHeading(
                                   title: 'Featured Brands', onPressed: () {}),
-                              TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'View All',
-                                  style: dark
-                                      ? Theme.of(context)
-                                          .textTheme
-                                          .labelMedium!
-                                          .apply(color: TColors.white)
-                                      : Theme.of(context)
-                                          .textTheme
-                                          .labelMedium!
-                                          .copyWith(color: TColors.black),
-                                ),
-                              )
                             ],
                           ),
 
