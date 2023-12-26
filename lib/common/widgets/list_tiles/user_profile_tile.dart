@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/images_strings.dart';
+import '../images/t_circular_image.dart';
 
 
 
@@ -16,19 +17,12 @@ class TUserProfileTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: // TCircularImage(
-          //   image: TImages.user,
-          //   width: 50,
-          //   height: 50,
-          //   padding: 0,
-          // ),
-          const ClipOval(
-        child: Image(
-          image: AssetImage(TImages.user),
-          width: 50,
-          height: 50,
-        ),
-      ),
+      leading: const TCircularImage(
+            image: TImages.user,
+            width: 50,
+            height: 50,
+            padding: 0,
+          ),
       title: Text('Zetah Dev',
           style: Theme.of(context)
               .textTheme
