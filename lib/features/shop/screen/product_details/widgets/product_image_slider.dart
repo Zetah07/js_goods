@@ -10,13 +10,10 @@ import '../../../../../utils/constants/images_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
-
 class TProductImageSlider extends StatelessWidget {
   const TProductImageSlider({
     super.key,
-      });
-
-
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,41 +28,41 @@ class TProductImageSlider extends StatelessWidget {
               child: Padding(
                   padding: EdgeInsets.all(TSizes.productImageRadius * 2),
                   child: Center(
-                      child: Image(
-                          image: AssetImage(TImages.productImage38))))),
-    
+                      child: Image(image: AssetImage(TImages.productImage4))))),
+
           //Image Sliderite
-          Positioned(
-            right: 0,
-            bottom: 30,
-            left: TSizes.defaultSpace,
-            child: SizedBox(
-              height: 80,
-              child: ListView.separated(
-                itemCount: 4,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                physics: const AlwaysScrollableScrollPhysics(),
-                separatorBuilder: (_, __) =>
-                    const SizedBox(width: TSizes.spaceBtwItems),
-                itemBuilder: (_, index) => TRoundedImage(
-                    width: 80,
-                    backgroundColor: dark ? TColors.dark : TColors.white,
-                    border: Border.all(color: TColors.primary),
-                    padding: const EdgeInsets.all(TSizes.sm),
-                    imageUrl: TImages.productImage39),
-              ),
-            ),
-          ),
-    
+
+                Positioned(
+                  right: 0,
+                  bottom: 30,
+                  left: TSizes.defaultSpace,
+                  child: SizedBox(
+                    height: 80,
+                    child: ListView.separated(
+                      itemCount: 6,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      separatorBuilder: (_, __) => const SizedBox(width: TSizes.spaceBtwItems,), 
+                      itemBuilder: (_, index) =>TRoundedImage(
+                      width: 80,
+                      backgroundColor: dark ? TColors.dark : TColors.white,
+                      border: Border.all( color: TColors.primary),
+                      padding: const EdgeInsets.all(TSizes.sm),
+                      imageUrl: TImages.productImage1,),
+                    ),
+                  ),
+                ),
+
+
           // Appbar Icons
           TAppBar(
             showBackArrow: true,
             actions: [
-              TCircularIcon(icon: Iconsax.heart5, color: Colors.red, onPressed: () {})
+              TCircularIcon(
+                  icon: Iconsax.heart5, color: Colors.red, onPressed: () {})
             ],
           )
-    
         ]),
       ),
     );
