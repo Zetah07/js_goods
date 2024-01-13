@@ -12,7 +12,7 @@ class TCircularIcon extends StatelessWidget {
     this.height,
     this.size = TSizes.lg,
     this.onPressed,
-    this.color = Colors.red,
+    this.color,
     this.backgroundColor,
   });
 
@@ -31,15 +31,19 @@ class TCircularIcon extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
-        color: backgroundColor ?? (dark
+        color: backgroundColor != null
+            ? backgroundColor!
+            : dark
                 ? TColors.black.withOpacity(0.9)
-                : TColors.white.withOpacity(0.9)),
+                : TColors.white.withOpacity(0.9),
       ),
       child: IconButton(
-        onPressed:onPressed,
-        icon: Icon(icon),
-        color: color,
-        iconSize: size,
+        onPressed: onPressed,
+        icon: Icon(
+          icon,
+          color: color,
+          size: size,
+        ),
       ),
     );
   }

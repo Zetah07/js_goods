@@ -1,49 +1,88 @@
 import 'package:flutter/material.dart';
-import 'package:js_goods/features/shop/screen/product_details/widgets/product_attributes.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:js_goods/common/widgets/appbar/appbar.dart';
+import 'package:js_goods/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import 'package:js_goods/common/widgets/icons/t_circular_icon.dart';
+import 'package:js_goods/common/widgets/images/t_rounded_image.dart';
+import 'package:js_goods/utils/constants/images_strings.dart';
+import 'package:js_goods/utils/constants/sizes.dart';
+import 'package:js_goods/utils/helpers/helper_functions.dart';
 
-import '../../../../utils/constants/sizes.dart';
-import 'widgets/product_image_slider.dart';
-
-import 'widgets/product_meta_data.dart';
-import 'widgets/rating_share_widget.dart';
+import '../../../../utils/constants/colors.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final dark = THelperFuntions.isDarkMode(context);
+    return Scaffold(
       body: SingleChildScrollView(
-          child: Column(
-        children: [
-          //1- Product Image Slider
-          TProductImageSlider(),
+        child: Column(
+          children: [
+            // - Product Image Slider
+            TCurvedEdgeWidget(
+              child: Container(
+                color: dark ? TColors.darkerGrey : TColors.light,
+                child: Stack(
+                  children: [
+                    // - Main Large Image
+                    const SizedBox(
+                        height: 400,
+                        child: Padding(
+                          padding:
+                              EdgeInsets.all(TSizes.productImageRadius * 2),
+                          child: Center(
+                              child: Image(
+                                  image: AssetImage(TImages.productImage38))),
+                        )),
 
-          // //2- Product Detail
-          Padding(
-            padding: EdgeInsets.only(
-                left: TSizes.defaultSpace,
-                right: TSizes.defaultSpace,
-                bottom: TSizes.defaultSpace),
-            child: Column(
-              children: [
-                //Rating &  Share Button
-                TRatingAndShare(),
+                    // - Image Slider
+                    Positioned(
+                      right: 0,
+                      bottom: 30,
+                      left: TSizes.defaultSpace,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: 100,
+                        child:ListView.separated(
+                          itemCount: 8,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          separatorBuilder: (context, index) => const SizedBox(
+                            width: TSizes.spaceBtwItems,
+                          ),
+                          itemBuilder: (_, index) => TRoundedImage(
+                            width: 80,
+                            backgroundColor: dark ? TColors.dark : TColors.white,
+                            border: Border.all(color: TColors.primary),
+                            padding: const EdgeInsets.all(TSizes.sm),
+                            applyImageRadius: true,
+                            imageUrl: TImages.productImage38,
+                          ),
+                        ), 
+                      ),
+                    ),
 
-                //       //Price, Title, Stock & Brand
-                TProductMetaData(),
-
-                //       //Attributes
-                TProductAttributes(),
-                //       //Checkout Button
-                //       //Description
-                //       //Reviews
-              ],
+                    // - Appbar Icons
+                    const TAppBar(
+                      showBackArrow: true,
+                      actions: [
+                        TCircularIcon(
+                          icon: Iconsax.heart5,
+                          color: Colors.red,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
-      )),
+            // - Product Details
+          ],
+        ),
+      ),
     );
   }
 }
-
