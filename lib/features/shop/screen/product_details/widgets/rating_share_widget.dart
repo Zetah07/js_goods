@@ -10,31 +10,46 @@ class TRatingAndShare extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            const Icon(Iconsax.star5,
-                color: Colors.amber, size: 24),
-            const SizedBox(width: TSizes.spaceBtwItems / 2),
-            Text.rich(
-              TextSpan(
+    return Padding(
+      padding: const EdgeInsets.only(
+          right: TSizes.defaultSpace,
+          left: TSizes.defaultSpace,
+          bottom: TSizes.defaultSpace),
+      child: Column(
+        children: [
+          // - Ratting & Share Button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // - Rating
+
+              Row(
                 children: [
-                  TextSpan(
-                      text: '4.9 ',
-                      style: Theme.of(context).textTheme.bodyLarge),
-                  const TextSpan(text: '(199)'),
+                  const Icon(Iconsax.star5, color: Colors.amber, size: 24),
+                  const SizedBox(width: TSizes.spaceBtwItems / 2),
+                  Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                            text: '4.5',
+                            style: Theme.of(context).textTheme.bodyLarge),
+                        const TextSpan(
+                          text: ' (199)',
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ],
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.share, size: TSizes.iconMd),
-        ),
-      ],
+
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.share, size: TSizes.iconMd),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

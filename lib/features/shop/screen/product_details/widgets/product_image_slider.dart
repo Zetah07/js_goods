@@ -18,53 +18,64 @@ class TProductImageSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFuntions.isDarkMode(context);
-    return TCurvedEdgeWidget(
-      child: Container(
-        color: dark ? TColors.darkerGrey : TColors.light,
-        child: Stack(children: [
-          // Main Large Image
-          const SizedBox(
-              height: 400,
-              child: Padding(
-                  padding: EdgeInsets.all(TSizes.productImageRadius * 2),
-                  child: Center(
-                      child: Image(image: AssetImage(TImages.productImage4))))),
+    return  TCurvedEdgeWidget(
+              child: Container(
+                color: dark ? TColors.darkerGrey : TColors.light,
+                child: Stack(
+                  children: [
+                    // - Main Large Image
+                    const SizedBox(
+                        height: 400,
+                        child: Padding(
+                          padding:
+                              EdgeInsets.all(TSizes.productImageRadius * 2),
+                          child: Center(
+                              child: Image(
+                                  image: AssetImage(TImages.productImage38))),
+                        )),
 
-          //Image Sliderite
-          Positioned(
-            right: 0,
-            bottom: 30,
-            left: TSizes.defaultSpace,
-            child: SizedBox(
-              height: 70,
-              child: ListView.separated(
-                itemCount: 6,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                physics: const AlwaysScrollableScrollPhysics(),
-                separatorBuilder: (_, __) => const SizedBox(
-                  width: TSizes.spaceBtwItems,
-                ),
-                itemBuilder: (_, index) => TRoundedImage(
-                  width: 80,
-                  backgroundColor: dark ? TColors.dark : TColors.white,
-                  border: Border.all(color: TColors.primary),
-                  padding: const EdgeInsets.all(TSizes.sm),
-                  imageUrl: TImages.productImage1,
+                    // - Image Slider
+                    Positioned(
+                      right: 0,
+                      bottom: 30,
+                      left: TSizes.defaultSpace,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: 100,
+                        child:ListView.separated(
+                          itemCount: 8,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          separatorBuilder: (context, index) => const SizedBox(
+                            width: TSizes.spaceBtwItems,
+                          ),
+                          itemBuilder: (_, index) => TRoundedImage(
+                            width: 80,
+                            backgroundColor: dark ? TColors.dark : TColors.white,
+                            border: Border.all(color: TColors.primary),
+                            padding: const EdgeInsets.all(TSizes.sm),
+                            applyImageRadius: true,
+                            imageUrl: TImages.productImage38,
+                          ),
+                        ), 
+                      ),
+                    ),
+
+                    // - Appbar Icons
+                    TAppBar(
+                      showBackArrow: true,
+                      actions: [
+                        TCircularIcon(
+                          icon: Iconsax.heart5,
+                          color: Colors.red,
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ),
-          // Appbar Icons
-          TAppBar(
-            showBackArrow: true,
-            actions: [
-              TCircularIcon(
-                  icon: Iconsax.heart5, color: Colors.red, onPressed: () {})
-            ],
-          )
-        ]),
-      ),
-    );
+            );
   }
 }
