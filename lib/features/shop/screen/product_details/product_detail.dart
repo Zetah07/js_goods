@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:js_goods/utils/constants/sizes.dart';
-import 'package:js_goods/utils/helpers/helper_functions.dart';
+// import 'package:js_goods/utils/helpers/helper_functions.dart';
 
 import 'widgets/product_attributes.dart';
 import 'widgets/product_image_slider.dart';
@@ -13,7 +13,7 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFuntions.isDarkMode(context);
+    // final dark = THelperFuntions.isDarkMode(context);
     return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -33,6 +33,8 @@ class ProductDetailScreen extends StatelessWidget {
                   TProductMetaData(),
                   // -- Attributes
                   TProductAttributes(),
+                  // -- Checkout Button
+                  // TCheckoutButton(),
                 ],
               ),
             ),
