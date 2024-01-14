@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
-import 'package:js_goods/utils/constants/sizes.dart';
 // import 'package:js_goods/utils/helpers/helper_functions.dart';
 
+import '../../../../utils/constants/sizes.dart';
+import 'widgets/checkout_button.dart';
+import 'widgets/description_rating.dart';
 import 'widgets/product_attributes.dart';
 import 'widgets/product_image_slider.dart';
 import 'widgets/product_meta_data.dart';
@@ -34,7 +35,9 @@ class ProductDetailScreen extends StatelessWidget {
                   // -- Attributes
                   TProductAttributes(),
                   // -- Checkout Button
-                  // TCheckoutButton(),
+                  TCheckoutButton(),
+                  // -- Description
+                  TDescriptionRating()
                 ],
               ),
             ),
