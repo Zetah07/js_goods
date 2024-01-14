@@ -37,7 +37,7 @@ class TProductImageSlider extends StatelessWidget {
                     // - Image Slider
                     Positioned(
                       right: 0,
-                      bottom: 30,
+                      bottom: 20,
                       left: TSizes.defaultSpace,
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width,

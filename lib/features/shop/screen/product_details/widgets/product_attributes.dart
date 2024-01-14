@@ -32,6 +32,7 @@ class TProductAttributes extends StatelessWidget {
                   ),
                   const SizedBox(width: TSizes.spaceBtwItems),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
