@@ -18,10 +18,12 @@ class TProductMetaData extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFuntions.isDarkMode(context);
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         //Price & Sale Price
         Row(
           children: [
+            //Sale Tag
             TRoundedContainer(
               radius: TSizes.sm,
               backgroundColor: TColors.secondary.withOpacity(0.8),
@@ -64,15 +66,19 @@ class TProductMetaData extends StatelessWidget {
 
         //Brand
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TCircularImage(
-              image: TImages.shoeIcon,
+              image: TImages.cosmeticsIcon,
               width: 32,
               height: 32,
               overlayColor: dark ? TColors.white : TColors.black,
             ),
-            const TBrandTitleWithVerifiedIcon(
-                title: 'Nike', brandTextSize: TextSize.medium),
+            const SizedBox(width: TSizes.sm),
+            const Expanded(
+              child: TBrandTitleWithVerifiedIcon(
+                  title: 'Nike', brandTextSize: TextSize.medium),
+            ),
           ],
         ),
       ],

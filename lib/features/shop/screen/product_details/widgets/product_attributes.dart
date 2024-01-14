@@ -16,31 +16,38 @@ class TProductAttributes extends StatelessWidget {
     final dark = THelperFuntions.isDarkMode(context);
     return Column(
       children: [
-        //Select Attribute Pricing & Description
+        // --Select Attribute Pricing & Description
         TRoundedContainer(
           padding: const EdgeInsets.all(TSizes.md),
           backgroundColor: dark ? TColors.darkGrey : TColors.grey,
           child: Column(
             children: [
-              //Title, Price and Stroc Status
+              /// Title, price and stock status
               Row(
                 children: [
-                  const TSectionHeading(title: 'Variation', showActionButton: false,),
+                  const TSectionHeading(title: 'Variations', showActionButton: false,),
                   const SizedBox(width: TSizes.spaceBtwItems),
-
-                  const TProductTitleText(title: 'Price : ', smallSize: true,),
-
-                  Row(
+                  const Column(
                     children: [
-                      Text('\$ 25', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),),
-                      const SizedBox(width: TSizes.spaceBtwItems),
-                      const TProductPriceText(price: '20')
+                      TProductTitleText(title: 'Price: ', smallSize: true,),
                     ],
                   ),
+                  Row(
+                    children: [
+                      // Actual price
+                      Text('\$ 250',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall!
+                              .apply(decoration: TextDecoration.lineThrough)),
+                      const SizedBox(width: TSizes.spaceBtwItems),
+
+                      // Sale price
+                      const TProductPriceText(price: '200', isLarge: false),
+                    ],
+                      ),
                 ],
               ),
-              //Variation Description
-
             ],
           ),
         )
