@@ -5,6 +5,7 @@ import '../../../../common/widgets/products/ratings/rating_indicator.dart';
 import '../../../../utils/constants/sizes.dart';
 
 import 'widgets/rating_progress_indicator.dart';
+import 'widgets/user_review_card.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});
@@ -28,7 +29,12 @@ class ProductReviewsScreen extends StatelessWidget {
 
               /// - Overall Product Ratings
               const TOverallProductRating(),
-              const TRatingBarIndicator()
+              const TRatingBarIndicator(rating: 4.6),
+              Text('12,345', style: Theme.of(context).textTheme.bodySmall),
+              const SizedBox(height: TSizes.spaceBtwSections),
+
+              /// - User Reviews List
+              const UserReviewCard(),
             ])),
       ),
     );
