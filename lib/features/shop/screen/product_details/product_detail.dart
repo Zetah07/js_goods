@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../utils/constants/sizes.dart';
 import 'widgets/bottom_add_cart_widget.dart';
 import '../../../../common/widgets/buttons/checkout_button.dart';
-import '../../../../common/widgets/texts/description_rating.dart';
+import '../../../../common/widgets/texts/t_description_and_rating_text.dart';
 import 'widgets/product_attributes.dart';
 import 'widgets/product_image_slider.dart';
 import 'widgets/product_meta_data.dart';
