@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:js_goods/utils/constants/sizes.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../features/shop/screen/product_reviews/product_reviews.dart';
 import 'section_heading.dart';
 import '../../../utils/constants/colors.dart';
 
@@ -45,7 +47,7 @@ class TDescriptionRating extends StatelessWidget {
             children: [
               const TSectionHeading(title: 'Reviews (199)', showActionButton: false),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ProductReviewsScreen()),
                   icon: const Icon(Iconsax.arrow_right_2, size: 18),
                   color: TColors.primary),
             ],
