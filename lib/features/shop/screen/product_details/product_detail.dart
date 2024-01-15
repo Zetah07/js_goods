@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 // import 'package:js_goods/utils/helpers/helper_functions.dart';
 
 import '../../../../utils/constants/sizes.dart';
-import 'widgets/checkout_button.dart';
-import 'widgets/description_rating.dart';
+import 'widgets/bottom_add_cart_widget.dart';
+import '../../../../common/widgets/buttons/checkout_button.dart';
+import '../../../../common/widgets/texts/description_rating.dart';
 import 'widgets/product_attributes.dart';
 import 'widgets/product_image_slider.dart';
 import 'widgets/product_meta_data.dart';
@@ -16,7 +17,7 @@ class ProductDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // final dark = THelperFuntions.isDarkMode(context);
     return const Scaffold(
-      // bottomNavigationBar: TBottomAddToCart(),
+      bottomNavigationBar: TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [

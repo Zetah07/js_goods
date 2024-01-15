@@ -3,8 +3,8 @@ import 'package:iconsax/iconsax.dart';
 import 'package:js_goods/utils/constants/sizes.dart';
 import 'package:readmore/readmore.dart';
 
-import '../../../../../common/widgets/texts/section_heading.dart';
-import '../../../../../utils/constants/colors.dart';
+import 'section_heading.dart';
+import '../../../utils/constants/colors.dart';
 
 class TDescriptionRating extends StatelessWidget {
   const TDescriptionRating({super.key});
