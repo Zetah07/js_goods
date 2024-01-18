@@ -10,7 +10,7 @@ class TBrandTitleWithVerifiedIcon extends StatelessWidget {
   const TBrandTitleWithVerifiedIcon({
     super.key,
     this.textColor,
-    this.maxLines =1,
+    this.maxLines = 1,
     required this.title,
     this.iconColor = TColors.primary,
     this.textAlign = TextAlign.center,
@@ -26,6 +26,7 @@ class TBrandTitleWithVerifiedIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Flexible(
           child: TBrandTitleText(
@@ -43,4 +44,3 @@ class TBrandTitleWithVerifiedIcon extends StatelessWidget {
     );
   }
 }
-

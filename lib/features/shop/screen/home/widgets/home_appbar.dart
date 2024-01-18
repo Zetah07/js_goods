@@ -5,7 +5,6 @@ import '../../../../../utils/constants/text_strings.dart';
 import '../../../../../common/widgets/appbar/appbar.dart';
 import '../../../../../common/widgets/products/cart/cart_menu_icon.dart';
 
-
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
     super.key,
@@ -28,8 +27,10 @@ class THomeAppBar extends StatelessWidget {
       ]),
       actions: [
         TCartCounterIcon(
-          onPressed: () {},
           iconColor: TColors.white,
+          onPressed: () {},
+          counterBgColor: TColors.black,
+          counterTextColor: TColors.white,
         )
       ],
     );
