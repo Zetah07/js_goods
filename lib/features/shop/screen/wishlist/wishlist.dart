@@ -8,8 +8,8 @@ import 'package:js_goods/common/widgets/products/product_cards/product_card_vert
 
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/icons/t_circular_icon.dart';
+import '../../../../navigation_menu.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../home/home.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({super.key});
@@ -20,7 +20,7 @@ class FavoriteScreen extends StatelessWidget {
       appBar: TAppBar(
         title: Text('Wishlist', style: Theme.of(context).textTheme.headlineMedium),
         actions: [
-          TCircularIcon(icon: Iconsax.add, onPressed: ()=> Get.to(() => const HomeScreen())),
+          TCircularIcon(icon: Iconsax.add, onPressed: ()=> Get.to(() => const NavigationMenu())),
         ],
       ),
       body: SingleChildScrollView(
