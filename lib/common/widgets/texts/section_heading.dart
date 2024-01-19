@@ -5,11 +5,11 @@ import '../../../utils/constants/text_strings.dart';
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading({
     super.key,
-    this.textColor,
-    this.showActionButton = true,
-    required this.title,
-    this.buttonTitle = TTexts.viewAll ,
     this.onPressed,
+    this.textColor,
+    this.buttonTitle = TTexts.viewAll ,
+    required this.title,
+    this.showActionButton = true,
   });
 
   final Color? textColor;

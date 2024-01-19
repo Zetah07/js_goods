@@ -95,7 +95,7 @@ class TProductCardVertical extends StatelessWidget {
             // Todo: Add Spacer() here to keep the height of each box same in case 1 or 2 lines of headings
             const Spacer(),
 
-            //Price
+            //Price Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
