@@ -9,6 +9,7 @@ import 'package:js_goods/features/personalization/screens/address/address.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../shop/screen/order/order_list.dart';
 import '../profile/profile.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -60,10 +61,12 @@ class SettingsScreen extends StatelessWidget {
                       icon: Iconsax.shopping_cart,
                       title: 'My Cart',
                       subtitle: 'Add, remove products and move to chekout'),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                       icon: Iconsax.bag_tick,
                       title: 'My Orders',
-                      subtitle: 'In-progress and Completed Orders'),
+                      subtitle: 'In-progress and Completed Orders',
+                      onTap: () => Get.to(() => const OrderScreen()),
+                  ),
                   const TSettingsMenuTile(
                       icon: Iconsax.bank,
                       title: 'Bank Accounts',
