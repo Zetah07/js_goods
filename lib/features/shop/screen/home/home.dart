@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:js_goods/features/shop/screen/all_products/all_products.dart';
 import 'package:js_goods/utils/constants/images_strings.dart';
 
 import '../../../../common/widgets/layout/grid_layout.dart';
@@ -23,29 +25,31 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         children: [
           //Header
-          const TTPrimaryHeaderContainer(
+          
+          TTPrimaryHeaderContainer(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //Appbar
-                THomeAppBar(),
-                SizedBox(height: TSizes.spaceBtwSections),
+                const THomeAppBar(),
+                const SizedBox(height: TSizes.spaceBtwSections),
 
                 //Search
-                TSearchContainer(text: TTexts.search),
-                SizedBox(height: TSizes.spaceBtwSections),
+                const TSearchContainer(text: TTexts.search),
+                const SizedBox(height: TSizes.spaceBtwSections),
 
                 //Categories and heading
                 Padding(
-                  padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                  padding: const EdgeInsets.only(left: TSizes.defaultSpace),
                   child: Column(
                     children: [
                       //Heading
                       TSectionHeading(
                         title: TTexts.popularCategories,
                         textColor: Colors.white,
+                        onPressed: () => Get.to(() => const AllProducts()),
                       ),
-                      SizedBox(height: TSizes.spaceBtwSections),
+                      const SizedBox(height: TSizes.spaceBtwSections),
 
                       //Categories
                       THomeCategories(),

@@ -31,13 +31,14 @@ class TProductCardVertical extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [TShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-          color: dark ? TColors.darkGrey : Colors.white,
+          color: dark ? TColors.darkerGrey : TColors.softGrey,
         ),
         child: Column(
           children: [
             //Thumbnail, WishList Button, Discount Tag
             TRoundedContainer(
               height: 180,
+              width: double.infinity,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
