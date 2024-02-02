@@ -15,8 +15,8 @@ class OrderScreen extends StatelessWidget {
         title: Text('My Orders', style: Theme.of(context).textTheme.headlineMedium),
         showBackArrow: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
+      body: const Padding(
+        padding: EdgeInsets.all(TSizes.defaultSpace),
         child: TOrderListItems(),
       ),
     );

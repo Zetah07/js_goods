@@ -47,16 +47,16 @@ class HomeScreen extends StatelessWidget {
                       TSectionHeading(
                         title: TTexts.popularCategories,
                         textColor: Colors.white,
-                        onPressed: () => Get.to(() => const AllProducts()),
+                        onPressed: (){},
                       ),
                       const SizedBox(height: TSizes.spaceBtwSections),
 
                       //Categories
-                      THomeCategories(),
+                      const THomeCategories(),
                     ],
                   ),
                 ),
-                SizedBox(height: TSizes.spaceBtwSections),
+                const SizedBox(height: TSizes.spaceBtwSections),
               ],
             ),
           ),
@@ -73,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                 //Heading
                 TSectionHeading(
                   title: 'Popular Products',
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const AllProducts()),
                 ),
                 const SizedBox(height: TSizes.spaceBtwItems),
 

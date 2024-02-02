@@ -41,7 +41,7 @@ class AllProducts extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               ///-- Products
-              TGirdLayout(itemCount: 4, itemBuilder: (context, index) => const TProductCardVertical()),
+              TGirdLayout(itemCount: 10, itemBuilder: (context, index) => const TProductCardVertical()),
             ],
           ),
         ),
