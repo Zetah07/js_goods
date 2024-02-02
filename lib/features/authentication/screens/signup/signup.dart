@@ -6,7 +6,7 @@ import '../../../../utils/constants/text_strings.dart';
 import '../../../../common/widgets/login_signup/form_divider.dart';
 import '../../../../common/widgets/login_signup/social_buttons.dart';
 
-import 'widgets/form_signup.dart';
+import 'widgets/signup_form.dart';
 
 
 class SignUpScreen extends StatelessWidget {
@@ -26,7 +26,7 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               //-- Form
-              const SignUpForm(),
+              const TSignUpForm(),
               const SizedBox(height: TSizes.spaceBtwSections),
 
               //-- Divider

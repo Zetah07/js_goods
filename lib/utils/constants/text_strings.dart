@@ -29,6 +29,7 @@ class TTexts {
   static const String iAgreeTo = "I agree to";
   static const String privacyPolicy = "Privacy Policy";
   static const String termsOfUse = "Terms of Use";
+  static const String processingInfo = "We are processing your information...";
   static const String verificationCode = "Verification Code";
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend Email in";
