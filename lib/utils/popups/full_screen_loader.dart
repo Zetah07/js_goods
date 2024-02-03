@@ -5,7 +5,6 @@ import 'package:js_goods/utils/helpers/helper_functions.dart';
 
 import '../../common/widgets/loaders/animation_loader.dart';
 
-
 class TFullScreenLoader {
   ///Open a full screen loading dialog with a given text and animation
   ///this method doesnt return anything
@@ -21,7 +20,9 @@ class TFullScreenLoader {
       builder: (_) => PopScope(
         canPop: false,
         child: Container(
-          color: THelperFuntions.isDarkMode(Get.context!) ? TColors.dark : TColors.white,
+          color: THelperFuntions.isDarkMode(Get.context!)
+              ? TColors.dark
+              : TColors.white,
           width: double.infinity,
           height: double.infinity,
           child: Column(
@@ -34,4 +35,10 @@ class TFullScreenLoader {
       ),
     );
   }
-  
+
+  /// Stop the currenctly open loading dialog
+  /// this method doesnt return anything
+  static stopLoading() {
+    Navigator.of(Get.overlayContext!).pop();
+  }
+}

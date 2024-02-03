@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:js_goods/utils/constants/images_strings.dart';
 import 'package:js_goods/utils/constants/text_strings.dart';
+import 'package:js_goods/utils/popups/loaders.dart';
 
+import '../../../../utils/helpers/network_manager.dart';
 import '../../../../utils/popups/full_screen_loader.dart';
 
 class SignUpController extends GetxController {
@@ -16,16 +18,20 @@ class SignUpController extends GetxController {
   final firstName = TextEditingController();
   final phoneNumber = TextEditingController();
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
-  
-  ///---  SIGNUP 
+
+  ///---  SIGNUP
   Future<void> signUp() async {
-    try{
+    try {
       // Start Loading
-      TFullScreenLoader.openLoadingDialog(TTexts.processingInfo, TImages.animalIcon);
+      TFullScreenLoader.openLoadingDialog(
+          TTexts.processingInfo, TImages.docerAnimation);
 
       // Check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConected();
+      if (!isConnected) return;
 
       //Form Validation
+      if (!signupFormKey.currentState!.validate()) return;
       
       //Privacy Policy Check
 
@@ -38,8 +44,10 @@ class SignUpController extends GetxController {
       // Move to verify email screen
     } catch (e) {
       // Show error message
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       // Stop Loading
+      TFullScreenLoader.stopLoading();
     }
   }
 }
