@@ -28,6 +28,8 @@ class TTexts {
   static const String orSignUpWith = "Or Sign up with";
   static const String iAgreeTo = "I agree to";
   static const String privacyPolicy = "Privacy Policy";
+  static const String acceptPrivacyPolicy = "Accept Privacy Policy";
+  static const String privacyPolicyError = "In order to create an account, you must accept the privacy policy and terms of use.";
   static const String termsOfUse = "Terms of Use";
   static const String processingInfo = "We are processing your information...";
   static const String verificationCode = "Verification Code";
@@ -62,6 +64,8 @@ class TTexts {
   static const String emailNotReceivedMessage = "Didn't get the email? Check you junk/spam or resend it.";
   static const String yourAccountCreatedTitle = "Your Account Suceessfully Created";
   static const String yourAccountCreatedSubTitle = "Congratulations! Your Account Awaits: Verify Your Email to Start Shopping amd Experience a World of Unrivaled Deals and Personalized Offers";
+  static const String success = "Success";
+  static const String accountCreated = "Your account has been created successfully, Verify your email to continue.";
 
   //Home
   static const String homeAppbarTitle = "Good day for shopping";

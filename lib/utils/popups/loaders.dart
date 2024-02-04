@@ -6,7 +6,7 @@ import 'package:js_goods/utils/constants/colors.dart';
 class TLoaders extends GetxController {
   static TLoaders get instance => Get.find();
 
-  static succesSnackBar({required title, message = '', duration = 3}) {
+  static successSnackBar({required title, message = '', duration = 3}) {
     Get.snackbar(
       title,
       message,
