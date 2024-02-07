@@ -72,7 +72,7 @@ class SignUpController extends GetxController {
           title: TTexts.success, message: TTexts.accountCreated);
 
       // Move to verify email screen
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
 
     } catch (e) {
       // Show error message
